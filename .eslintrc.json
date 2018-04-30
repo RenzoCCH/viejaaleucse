@@ -1,0 +1,57 @@
+{
+    "env": {
+        "es6": true,
+        "browser": true,
+        "node":true,
+        "jest": true
+    },
+    "extends": "eslint:recommended",
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true,
+            "jsx": true
+        },
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "babel",
+        "prettier"
+    ],
+    "rules": {
+        "prettier/prettier": "error",
+        "indent": [2, 2, {"SwitchCase": 1}],
+        "linebreak-style": 0,
+//        "quotes": [
+//            "error",
+//            "single"
+//        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "strict":0,
+        "space-before-function-paren": 0,
+        "no-multi-spaces": 1,
+        "ignoreEOLComments": true,
+        "block-spacing": 1,
+        "no-trailing-spaces":0,
+        "no-whitespace-before-property":"error",
+        "space-before-blocks":["error","always"],
+        "space-in-parens": 0,
+        "space-infix-ops": ["error", {"int32Hint": false}],
+        "space-unary-ops": [
+          2, {
+            "words": true,
+            "nonwords": false,
+            "overrides": {
+              "new": false,
+              "++": true
+            }
+          }],
+        "no-console": 0,
+        "react/jsx-uses-vars": "error",
+        "react/jsx-uses-react": "error"
+    }
+}
