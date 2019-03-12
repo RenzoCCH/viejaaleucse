@@ -7,7 +7,9 @@ export const LoginPage = ({ startLogin }) => (
     <section className="box-layout__box">
       <h1 className="box-layout__title">Boilerplate</h1>
       <p>Tag line for app.</p>
-      <button className="button" onClick={startLogin}>Login with Google</button>
+      <button className="button" onClick={startLogin}>
+        Login with Google
+      </button>
     </section>
   </div>
 );
