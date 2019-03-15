@@ -7,21 +7,44 @@ class Piece extends React.Component {
 
   popUp = () => this.props.popUp(this.props.piece);
 
-  render = () => (
-    <figure>
-      {(this.props.set || this.state.visible) && (
-        <img src={this.props.piece.src} alt="País" className="puzzle__piece" />
-      )}
+  render = () => {
+    let area;
+    if (Array.isArray(this.props.piece.coords)) {
+      area = this.props.piece.coords.map((item, i) => (
+        <area
+          coords={item.coord}
+          shape={item.shape}
+          onMouseOver={this.hover}
+          onMouseOut={this.hover}
+          onClick={this.popUp}
+          key={i}
+        />
+      ));
+    } else {
+      area = (
+        <area
+          coords={this.props.piece.coords}
+          shape={this.props.piece.shape}
+          onMouseOver={this.hover}
+          onMouseOut={this.hover}
+          onClick={this.popUp}
+        />
+      );
+    }
 
-      <area
-        coords={this.props.piece.coords}
-        shape={this.props.piece.shape}
-        onMouseOver={this.hover}
-        onMouseOut={this.hover}
-        onClick={this.popUp}
-      />
-    </figure>
-  );
+    return (
+      <figure>
+        {(this.props.set || this.state.visible) && (
+          <img
+            src={this.props.piece.src}
+            alt="País"
+            className="puzzle__piece"
+          />
+        )}
+        {area}
+      </figure>
+    );
+  };
 }
 
 Piece.defaultProps = {
