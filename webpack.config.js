@@ -76,10 +76,12 @@ module.exports = env => {
     ],
     devtool: isProduction ? "source-map" : "inline-source-map",
     devServer: {
+      inline: true,
       contentBase: path.resolve(__dirname, "public"),
       publicPath: "/dist/",
       port: 9000,
-      historyApiFallback: true
+      historyApiFallback: true,
+      host: "0.0.0.0"
     }
   };
 };

@@ -1,5 +1,6 @@
 import React from "react";
+import Puzzle from "../components/gameComponents/Puzzle";
 
-const DashboardPage = () => <div>DashBoard pag content</div>;
+const DashboardPage = () => <Puzzle />;
 
 export default DashboardPage;

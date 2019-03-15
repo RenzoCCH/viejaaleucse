@@ -14,6 +14,9 @@ node_modules/
 .idea/**/uiDesigner.xml
 
 public/dist/
+#package json file
+
+
 
 # configuration files
 .env.test
