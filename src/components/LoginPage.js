@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { startLogin } from "../actions/auth";
+import { Link } from "react-router-dom";
 
 export const LoginPage = ({ startLogin }) => (
   <div className="box-layout">
@@ -10,6 +11,7 @@ export const LoginPage = ({ startLogin }) => (
       <button className="button" onClick={startLogin}>
         Login with Google
       </button>
+      <Link to="/register">Resiter</Link>
     </section>
   </div>
 );
