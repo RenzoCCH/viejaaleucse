@@ -15,7 +15,7 @@ module.exports = env => {
   const isProduction = env == "production";
   const CSSExtract = new ExtractTextPlugin("styles.css");
   return {
-    entry: ["babel-polyfill", "./src/puzzle.js"],
+    entry: ["babel-polyfill", "./src/app.js"],
     output: {
       path: path.resolve(__dirname, "public", "dist"),
       filename: "bundle.js"

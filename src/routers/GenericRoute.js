@@ -11,7 +11,7 @@ export const GenericRoute = ({
   <Route
     {...rest}
     component={props => (
-      <div>
+      <div className="page">
         <Header />
         <Component {...props} />
       </div>
