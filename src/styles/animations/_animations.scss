@@ -6,7 +6,7 @@
 .fade-appear-active,
 .fade-enter.fade-enter-active {
   opacity:1;
-  transition: opacity 30000ms linear 15000ms;
+  transition: opacity 300ms linear ;
 }
 
 .fade-exit {
@@ -14,5 +14,5 @@
 }
 .fade-exit.fade-exit-active{
   opacity:0;
-  transition: opacity 15000ms linear;
+  transition: opacity 300ms linear;
 }

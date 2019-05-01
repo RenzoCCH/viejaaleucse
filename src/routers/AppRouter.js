@@ -3,8 +3,11 @@ import { Router, Route, Switch } from "react-router-dom";
 import createHistory from "history/createBrowserHistory";
 
 import { TransitionGroup, CSSTransition } from "react-transition-group";
+import { Link } from "react-router-dom";
 
+import MapGamePage from "../components/gameComponents/MapGamePage";
 import DashboardPage from "../components/DashboardPage.js";
+
 import ContinentAdminPage from "../components/Admin/ContinentAdminPage";
 import CountryAdminPage from "../components/Admin/CountryAdminPage";
 import CounryEditAdminPage from "../components/Admin/CountryEditAdminPage";
@@ -18,8 +21,6 @@ import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
 import GenericRoute from "./GenericRoute";
 
-import MapGamePage from "../components/gameComponents/MapGamePage";
-
 export const history = createHistory();
 
 const AppRouter = () => (
@@ -27,45 +28,52 @@ const AppRouter = () => (
     <Route
       render={({ location }) => (
         <TransitionGroup>
-          <CSSTransition key={location.key} timeout={30000} classNames="fade">
+          <CSSTransition
+            key={location.pathname}
+            timeout={300}
+            classNames="fade"
+          >
             <Switch location={location}>
-              <GenericRoute path="/" exact={true} component={DashboardPage} />
-              <GenericRoute path="/map" component={MapGamePage} />
+              {/*<GenericRoute path="/" exact={true} component={DashboardPage} />*/}
+              {/*<GenericRoute path="/map" component={MapGamePage} />*/}
 
-              <PublicRoute path="/login" component={LoginPage} />
-              <PublicRoute path="/register" component={RegisterPage} />
+              <Route path="/" exact={true} component={DashboardPage} />
+              <Route path="/map" component={MapGamePage} />
 
-              <PrivateRoute path="/dashboard" component={DashboardPage} />
-              <PrivateRoute
-                path="/admin/continent"
-                exact={true}
-                component={ContinentAdminPage}
-              />
-              <PrivateRoute
-                path="/admin/continent/:continent"
-                exact={true}
-                component={ContinentEditAdminPage}
-              />
-              <PrivateRoute
-                path="/admin/country"
-                exact={true}
-                component={CountryAdminPage}
-              />
-              <PrivateRoute
-                path="/admin/country/:country"
-                exact={true}
-                component={CounryEditAdminPage}
-              />
-              <PrivateRoute
-                path="/admin/continent/:continent"
-                component={ContinentEditAdminPage}
-              />
-              <PrivateRoute
-                path="/admin/continent/:continent"
-                component={ContinentEditAdminPage}
-              />
+              {/*<PublicRoute path="/login" component={LoginPage} />*/}
+              {/*<PublicRoute path="/register" component={RegisterPage} />*/}
 
-              <Route component={NotFoundPage} />
+              {/*<PrivateRoute path="/dashboard" component={DashboardPage} />*/}
+              {/*<PrivateRoute*/}
+                {/*path="/admin/continent"*/}
+                {/*exact={true}*/}
+                {/*component={ContinentAdminPage}*/}
+              {/*/>*/}
+              {/*<PrivateRoute*/}
+                {/*path="/admin/continent/:continent"*/}
+                {/*exact={true}*/}
+                {/*component={ContinentEditAdminPage}*/}
+              {/*/>*/}
+              {/*<PrivateRoute*/}
+                {/*path="/admin/country"*/}
+                {/*exact={true}*/}
+                {/*component={CountryAdminPage}*/}
+              {/*/>*/}
+              {/*<PrivateRoute*/}
+                {/*path="/admin/country/:country"*/}
+                {/*exact={true}*/}
+                {/*component={CounryEditAdminPage}*/}
+              {/*/>*/}
+              {/*<PrivateRoute*/}
+                {/*path="/admin/continent/:continent"*/}
+                {/*component={ContinentEditAdminPage}*/}
+              {/*/>*/}
+              {/*<PrivateRoute*/}
+                {/*path="/admin/continent/:continent"*/}
+                {/*component={ContinentEditAdminPage}*/}
+              {/*/>*/}
+
+              {/*<Route component={NotFoundPage} />*/}
             </Switch>
           </CSSTransition>
         </TransitionGroup>

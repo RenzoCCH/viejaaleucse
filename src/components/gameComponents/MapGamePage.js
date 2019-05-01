@@ -1,8 +1,9 @@
 import React from "react";
 import Puzzle from "./Puzzle";
+import { Link } from "react-router-dom";
 
-const DashboardPage = props => {
+const MapGamePage = props => {
   return <Puzzle />;
 };
 
-export default DashboardPage;
+export default MapGamePage;
